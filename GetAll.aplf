@@ -1,0 +1,7 @@
+ GetAll←{
+     page←Fetch ⍵
+     tables←ExtractTables page
+     clean←CleanTable¨tables
+     xml←⎕XML¨clean
+     XML2Mat¨xml
+ }
