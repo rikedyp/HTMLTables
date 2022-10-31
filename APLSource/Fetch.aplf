@@ -1,7 +1,6 @@
  Fetch←{
 ⍝ ⍵: simple char vec :: URL
 ⍝ ←: simple char vec :: web page
-     _←{0=⎕NC ⍵:⎕SE.Link.Import ⎕THIS(DEPS⍎⍵) ⋄ ''}'HttpCommand'
      r←HttpCommand.Get ⍵
      200≢r.HttpStatus:r.HttpMessage ⎕SIGNAL r.HttpStatus
      r.Data
