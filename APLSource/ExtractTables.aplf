@@ -1,6 +1,0 @@
- ExtractTables←{
-⍝ ⍵: simple char vec :: HTML page
-⍝ ←: nested vec of char vec :: HTML table
-     pat←'<table.*>((.|\n)*)<\/table>'
-     pat ⎕S'&'⍠'Greedy' 0⍠'Mode' 'D'⊢⍵⌿⍨~⍵∊⎕UCS 13   ⍝ Normalise newlines for Dyalog
- }

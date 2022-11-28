@@ -1,0 +1,17 @@
+ HTX←{⎕ML←1                      ⍝ Extract html segments. htx from dfns.
+     1≠≡,⍵:⍺ ∇↑{⍺,' ',⍵}/⍵       ⍝ accept vectors of vectors.
+
+     xtags←{seg sep cmb vec ⍵}   ⍝ extract tags, where:
+     seg←{(⎕IO=2|⍳⍴⍵)/⍵}         ⍝ segment with leading tag.
+     sep←{((fm⍷⍵)∨to⍷⍵)⊂⍵}       ⍝ html separated at tags.
+     cmb←{(~'  '⍷⍵)/⍵}           ⍝ compressed multiple blanks.
+     vec←{(~⍵∊⎕TC){⍺\⍺/⍵}⍵}      ⍝ blanks for newlines.
+
+     rlt←{(1++/∧\'>'≠⍵)↓⍵}       ⍝ remove leading tag.
+     att←{⍵,to,'>'}              ⍝ append trailing tag.
+
+     fm to←'<' '</',¨⊂⍺~'<>'     ⍝ opening and closing html tags.
+
+     '<'=⊃⍺:att¨xtags,⍵          ⍝ ··tagged segments.
+     rlt¨xtags,⍵          ⍝ untagged segments.
+ }
