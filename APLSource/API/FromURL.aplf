@@ -1,0 +1,6 @@
+ FromURL←{
+⍝   ⍵: URL of web page from which to extract tables
+⍝ {⍺}: Indices of tables to keep in results, ⎕IO-dependent
+     page←##.Fetch ⍵
+     FromHTML page
+ }

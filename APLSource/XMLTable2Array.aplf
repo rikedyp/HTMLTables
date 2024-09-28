@@ -1,4 +1,7 @@
- XML2Mat←{
+ XMLTable2Array←{
+⍝ ⍵: ⎕XML format matrix
+⍝ ←: Nested matrix of text extracted from <table> elements
+⍝    one row for each outermost <tr>
      (d e c a t)←↓⍉⍵           ⍝ depth, element, content, attributes, type
      i←⍳≢⍵                     ⍝ indices
      trd←d/⍨<\e∊⊂'tr'          ⍝ depth of highest level <tr> elements
@@ -20,5 +23,5 @@
      exp←1/⍨dif@(0∘=)ex0\rec       ⍝ expansion vector to pad val to fill shape
      val\⍨←exp
      (×/shape)≠≢val:'Extracted <td> <th> values do not match computed shape'⎕SIGNAL 5
-     shape⍴val
+     shape⍴∊¨val
  }

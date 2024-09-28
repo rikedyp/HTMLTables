@@ -1,0 +1,5 @@
+ FromFile←{
+⍝ ⍵: Simple character vector path to file containing HTML
+⍝ ←: List of APL nested matrices with text extracted from <table> tags in ⍵
+⍵
+ }
