@@ -1,0 +1,11 @@
+ Test_FromHTML_04←{
+⍝ test table with multiple columns
+     html←'<html>'
+     html,←'<table>'
+     html,←'<tr><td>1</td><td>2</td><td>3</td></tr>'
+     html,←'<tr><td>1</td><td>2</td><td>3</td></tr>'
+     html,←'</table>'
+     html,←'</html>'
+     t←##.##.API.FromHTML html
+     t≡,⊂2 3⍴,¨'123'
+ }

@@ -1,0 +1,14 @@
+ Test_FromHTML_02←{
+⍝ test converting list of 2 tables
+     html←'<html>'
+     html,←'<table>'
+     html,←'<tr><td>TEST</td></tr>'
+     html,←'</table>'
+     html,←'<table>'
+     html,←'<tr><td>TEST</td></tr>'
+     html,←'<tr><td>TEST</td></tr>'
+     html,←'</table>'
+     html,←'</html>'
+     t←##.##.API.FromHTML html
+     t≡,(⍪⊂'TEST')(⍪'TEST' 'TEST')
+ }

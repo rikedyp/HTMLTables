@@ -1,0 +1,11 @@
+ Test_FromHTML_03←{
+⍝ test table header <th> tag
+     html←'<html>'
+     html,←'<table>'
+     html,←'<tr><th>HEADER</th></tr>'
+     html,←'<tr><td>TEST</td></tr>'
+     html,←'</table>'
+     html,←'</html>'
+     t←##.##.API.FromHTML html
+     t≡,⊂⍪'HEADER' 'TEST'
+ }
