@@ -1,7 +1,7 @@
  Fetch←{
 ⍝ ⍵: simple char vec :: URL
 ⍝ ←: simple char vec :: web page
-     r←##.HttpCommand.Get ⍵
+     r←HttpCommand.Get ⍵
      200≢r.HttpStatus:r.HttpMessage ⎕SIGNAL r.HttpStatus
      r.Data
  }
