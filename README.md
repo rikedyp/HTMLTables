@@ -2,7 +2,7 @@
 Import HTML tables as APL arrays
 
 ```APL
- HTMLTables.ImportFromURL ← {
+ HTMLTables.FromURL ← {
     ⍵: Simple character vector URL
   {⍺}: Indices of tables to import (default all ⍳≢tables)
     ←: Return a nested vector of nested matrices. Each matrix contains data from HTML tables fetched from the URL
@@ -11,56 +11,29 @@ Import HTML tables as APL arrays
 
 ## How to use
 
-### Load with `]Get`
-1. Import with `]Get` from this repository's URL
+### Import Tatin package
 
-	```APL
-				]Get https://github.com/aplutils/HTMLTables
-	#.HTMLTables
-	```
+HTMLTables is (not yet) only available as a Tatin package.
 
-	> Alternatively, clone this repository or [download as .zip](https://github.com/aplutils/HTMLTables/archive/refs/heads/main.zip) and extract
-	> ```APL
-	>       ]Get /path/to/HTMLTables
-	> #.HTMLTables
-	> ```
-	> For use in scripts or other applications, import with `⎕SE.Link.Import` as part of a build process
-	> ```APL
-	>       'HTMLTables'⎕NS⍬
-	>       ⎕SE.Link.Import HTMLTables '/path/to/HTMLTables'
-	>       Imported: #.HTMLTables ← /path/to/HTMLTables
-	> ```
+```
+]Tatin.LoadPackages RikedyP-HTMLTables
+```
 
-1. Import HttpCommand
+### Call `HTMLTables.FromURL` with a URL:
 
-	```APL
-				]Get HttpCommand -target=HTMLTables
-	#.HTMLTables.HttpCommand
-	```
-
-## Call `HTMLTables.ImportFromURL` with a URL:
-
-```APL
-      5↑4⊃ HTMLTables.ImportFromURL 'https://en.wikipedia.org/wiki/List_of_Wimbledon_gentlemen%27s_singles_champions'
-┌──────┬───────┬───────────────┬───────┬───────────────┬─────────────────────────┐
-│┌────┐│┌─┬───┐│┌─────────┐    │┌─┬───┐│┌──────────┐   │┌─────────────┐          │
-││1968│││ │AUS│││Rod Laver│    ││ │AUS│││Tony Roche│   ││6–3, 6–4, 6–2│          │
-│└────┘│└─┴───┘│└─────────┘    │└─┴───┘│└──────────┘   │└─────────────┘          │
-├──────┼───────┼───────────────┼───────┼───────────────┼─────────────────────────┤
-│┌────┐│┌─┬───┐│┌─────────┐    │┌─┬───┐│┌─────────────┐│┌──────────────────┐     │
-││1969│││ │AUS│││Rod Laver│    ││ │AUS│││John Newcombe│││6–4, 5–7, 6–4, 6–4│     │
-│└────┘│└─┴───┘│└─────────┘    │└─┴───┘│└─────────────┘│└──────────────────┘     │
-├──────┼───────┼───────────────┼───────┼───────────────┼─────────────────────────┤
-│┌────┐│┌─┬───┐│┌─────────────┐│┌─┬───┐│┌────────────┐ │┌───────────────────────┐│
-││1970│││ │AUS│││John Newcombe│││ │AUS│││Ken Rosewall│ ││5–7, 6–3, 6–2, 3–6, 6–1││
-│└────┘│└─┴───┘│└─────────────┘│└─┴───┘│└────────────┘ │└───────────────────────┘│
-├──────┼───────┼───────────────┼───────┼───────────────┼─────────────────────────┤
-│┌────┐│┌─┬───┐│┌─────────────┐│┌─┬───┐│┌──────────┐   │┌───────────────────────┐│
-││1971│││ │AUS│││John Newcombe│││ │USA│││Stan Smith│   ││6–3, 5–7, 2–6, 6–4, 6–4││
-│└────┘│└─┴───┘│└─────────────┘│└─┴───┘│└──────────┘   │└───────────────────────┘│
-├──────┼───────┼───────────────┼───────┼───────────────┼─────────────────────────┤
-│┌────┐│┌─┬───┐│┌──────────┐   │┌─┬───┐│┌────────────┐ │┌───────────────────────┐│
-││1972│││ │USA│││Stan Smith│   ││ │ROM│││Ilie Năstase│ ││4–6, 6–3, 6–3, 4–6, 7–5││
-│└────┘│└─┴───┘│└──────────┘   │└─┴───┘│└────────────┘ │└───────────────────────┘│
-└──────┴───────┴───────────────┴───────┴───────────────┴─────────────────────────┘
+```
+      ⍴r←HTMLTables.FromURL'https://aplwiki.com/wiki/Dyalog_APL'
+5
+      5↑2⊃r
+┌──────┬────┬───────┬───────────────────────────────────────────────────────────────────────────────────┐
+│Number│Year│Month  │Features                                                                           │
+├──────┼────┼───────┼───────────────────────────────────────────────────────────────────────────────────┤
+│1     │1983│April  │(Zilog S8000 only)                                                                 │
+├──────┼────┼───────┼───────────────────────────────────────────────────────────────────────────────────┤
+│2     │1984│       │(Many more platforms)                                                              │
+├──────┼────┼───────┼───────────────────────────────────────────────────────────────────────────────────┤
+│3.0   │1985│       │(More platforms) Rectangular display of arrays                                     │
+├──────┼────┼───────┼───────────────────────────────────────────────────────────────────────────────────┤
+│4.0   │1986│October│User-defined operators,function assignment(including forderived functions),⎕MONITOR│
+└──────┴────┴───────┴───────────────────────────────────────────────────────────────────────────────────┘
 ```
