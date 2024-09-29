@@ -7,6 +7,6 @@
      html,←'<tr><td>1</td></tr>'
      html,←'</table>'
      html,←'</html>'
-     t←##.##.API.FromHTML html
+     t←##.##.HTMLTables.API.FromHTML html
      t≡,⊂↑,¨¨'123' '12' '1'
  }

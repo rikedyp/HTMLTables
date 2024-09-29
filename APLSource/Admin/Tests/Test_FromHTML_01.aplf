@@ -4,6 +4,6 @@
      html,←'<tr><td>TEST</td></tr>'
      html,←'</table>'
      html,←'</html>'
-     t←##.##.API.FromHTML html
+     t←##.##.HTMLTables.API.FromHTML html
      t≡,⊂1 1⍴⊂'TEST'
  }

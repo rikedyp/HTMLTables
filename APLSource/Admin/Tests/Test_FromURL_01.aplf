@@ -1,0 +1,6 @@
+ Test_FromURL_01←{
+     url←'https://raw.githubusercontent.com/rikedyp/HTMLTables/refs/heads/main/test_files/table.html'
+     t←##.##.HTMLTables.API.FromURL url
+     ref←2 3⍴,¨'ONE' 'TWO' 'THREE' '1' '2' '3'
+     ref≡⊃t
+ }
