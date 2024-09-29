@@ -1,1 +1,2 @@
 rikedyp-TinyTest-1.0.1
+aplteam-DotNetZip-2.2.0

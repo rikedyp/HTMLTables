@@ -1,0 +1,38 @@
+ {r}←MakeRelease;API;cider;dist;folder;home;name;package;parms;q;v;version;zip
+⍝ Make a new release of ParquetDotNet
+ home←##.CiderConfig.HOME
+ cider←##.CiderConfig.CIDER
+ name←(⎕SE.Tatin.ReadPackageConfigFile home).name
+
+⍝ Copy version from package config
+ API←##.HTMLTables.API
+ version←⎕VR'API.Version'
+ q←''''
+ v←q,q,⍨⎕SE._Tatin.Client.IncreaseBuildNumber API.Version ⋄ API.⎕FX'cfg←.*' 'r←cfg.version'⎕R''('r←',v)⊢version
+ {}⎕SE.Link.Add'API.Version'
+
+⍝ Create distribution folder if not exists
+ dist←cider.distributionFolder
+ 1 ⎕MKDIR dist
+
+⍝ Build package
+ parms←⎕SE.Tatin.CreateBuildParms ##.CiderConfig.HOME
+ parms.targetPath←dist
+ ⍝parms.version←v
+ package←⎕SE.Tatin.BuildPackage parms
+
+⍝ ]Get-able zip for GitHub release
+ folder←dist,'/',name,'-',API.Version
+ zip←dist,'/',name,'.zip'
+ 1 ⎕MKDIR folder
+ folder(⎕NCOPY ⎕OPT'Wildcard' 1)home,'/APLSource/HTMLTables/*'
+ folder ##.DotNetZip.ZipFolder zip
+
+ ⎕←']Get-able zip saved to ',zip
+ ⎕←'Tatin package built to ',package
+ ⎕←'Publish to Tatin with:'
+ ⎕←']Tatin.PublishPackage ',package,' [registry]'
+
+⍝ Restore dynamic Version function
+ API.⎕FX version ⋄ {}⎕SE.Link.Add'API.Version'
+ r←0
