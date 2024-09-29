@@ -7,6 +7,6 @@
      ⍺←⍳≢tables
      (error xml)←↓⍉↑{0::(⎕EN ⎕DMX.Message) ⋄ (0,⊂⎕XML ⍵)}¨tables[⍺]
      e←0<error
-     _←{∨/e:⎕←'There were errors processing tables: ',∊(⎕UCS 10),⍕(⍸e),':',↑e/xml ⋄ ''}⍬
+     _←{∨/e:⎕←'There were errors processing tables: ',∊(⎕UCS 13),⍕(⍸e),':',↑e/xml ⋄ ''}⍬
      ##.XMLTable2Array¨xml/⍨~e
  }
