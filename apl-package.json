@@ -10,7 +10,7 @@
   maintainer: "",
   ml: 1,
   name: "HTMLTables",
-  source: "APLSource",
+  source: "APLSource/HTMLTables",
   tags: "table, grid, data, import, read, web, page, site, scrape",
   version: "0.0.1",
 }
