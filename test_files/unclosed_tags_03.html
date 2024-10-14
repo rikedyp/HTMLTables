@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>unclosed tags test 01</title>
+    </head>
+    <body>
+        <p>
+            This page has an unclosed `<link>` tag inside the table which needs to be self-closed at the end.
+            That is: `<link rel="stylesheet" href="#">` becomes `<link rel="stylesheet" href="#"/>`
+        </p>
+        
+        <p>Note that only HTML inside tables needs to be XML compliant.</p>
+
+        <table>
+            <tr>
+                <th>Column 1</th><th>Column 2</th>
+            </tr>
+            <tr>
+                <td>one <link rel="stylesheet" href="#"></td><td>two<br>and a half</td>
+            </tr>
+        </table>
+    </body>
+</html>

@@ -1,12 +1,13 @@
  CloseUnclosedTags←{
-     o←('<'=⍵)>'/'=1⌽⍵         ⍝ open tags are < not followed by /
+     o←('<'=⍵)>'/'=1⌽⍵     ⍝ open tags are < not followed by /
      c←('<'=⍵)∧1⌽('/'=⍵)   ⍝ closed tags marked by </
-     t←¯1(⊢∧⌽)≠\o∨(-≢⍵)↑∊<\¨o⊂⍵∊' >'                           ⍝ open tag type=1
-     t-←'/'(⊢∨=)(t=1)∧¯1(⊢∨⌽)≠\∊sc×2=+/¨sc←(o⊂o)∨<\¨o⊂'/>'⍷⍵   ⍝ ignore self-closing tags
-     t+←2×¯1(⊢∧⌽)⍣2≠\c∨(-≢⍵)↑∊<\¨c⊂⍵∊' >'                      ⍝ close tag type=2
-     ot←(t=1)⊆⍵
-     ct←(t=2)⊆⍵
+     t←¯1(⊢∧⌽)≠\o∨(-≢⍵)↑∊<\¨o⊂⍵∊' >'                             ⍝ open tag type=1
+     t-←2×'/'(⊢∨=)(t=1)∧¯1(⊢∨⌽)≠\∊sc×2=+/¨sc←(o⊂o)∨<\¨o⊂'/>'⍷⍵   ⍝ ignore self-closing tags
+     t+←2×¯1(⊢∧⌽)⍣2≠\c∨(-≢⍵)↑∊<\¨c⊂⍵∊' >'                        ⍝ close tag type=2
+     ot←(t=1)⊆⍵                    ⍝ open tags
+     ct←(t=2)⊆⍵                    ⍝ close tags
      PDE←{⍺(R⍨∊R←≢⍤⊢⍴∘⍋∘⍋⍺⍳⍪⍨)⍵}   ⍝ APLCart: Progressive membership without replacement
-     uc←~ot PDE ct                 ⍝ each occurance of a close tag consumes an occurance of the corresponding open tag. Unclosed tags are the remaining open tags.
-     '/'@(⍸x)⊢⍵⌿⍨1+x←2>/0,(t=1)∧(+\2</0,t=1)∊⍸uc   ⍝ close unclosed tags
+     ut←~ot PDE ct                 ⍝ each occurance of a close tag consumes an occurance of the corresponding open tag. Unclosed tags are the remaining open tags.
+     otm←(-≢⍵)↑¯1(⊢∧⌽)≠\∊(⊂⍨o)∨<\¨o⊂⍵='>'                  ⍝ mark entire open tag
+     '/'@((¯1+⍳+/x)+⍸x)⊢⍵⌿⍨1+x←2>/0,otm∧(+\2</0,t=1)∊⍸ut   ⍝ close unclosed tags
  }
