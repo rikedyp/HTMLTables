@@ -1,0 +1,5 @@
+ Test_UnclosedTags_02←{
+     h←⊃⎕NGET ##.##.CiderConfig.HOME,'/test_files/unclosed_tags_02.html'
+     r←##.##.HTMLTables.API.FromHTML h
+     r≡,⊂3 2⍴'Column 1' 'Column 2' 'one' 'twoand a half' '' 'Self-closingbr'
+ }

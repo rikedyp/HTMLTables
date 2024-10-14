@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>unclosed tags test 01</title>
+        <link rel="stylesheet" href="#">
+    </head>
+    <body>
+        <p>
+            This page has some unclosed tags, such as <br>
+            the br tag. For the purpose of extracting text data, we simply close any unclosed tags.
+        </p>
+        
+        <p>Note that only HTML inside tables needs to be XML compliant.</p>
+
+        <table>
+            <tr>
+                <th>Column 1</th><th>Column 2</th>
+            </tr>
+            <tr>
+                <td>one</td><td>two<br>and a half</td>
+            </tr>
+        </table>
+    </body>
+</html>

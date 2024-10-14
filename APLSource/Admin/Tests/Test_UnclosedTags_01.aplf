@@ -1,0 +1,5 @@
+ Test_UnclosedTags_01←{
+     h←⊃⎕NGET ##.##.CiderConfig.HOME,'/test_files/unclosed_tags_01.html'
+     r←##.##.HTMLTables.API.FromHTML h
+     r≡,⊂2 2⍴'Column 1' 'Column 2' 'one' 'twoand a half'
+ }
