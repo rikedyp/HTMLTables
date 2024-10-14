@@ -1,0 +1,11 @@
+ Test_Hindi_Songs←{
+     h←⊃⎕NGET ##.##.CiderConfig.HOME,'/test_files/hindi_songs_asha_bhosle.html'
+     r←##.##.HTMLTables.API.FromHTML h
+     65≠≢r:0
+     films_1948←⍉⍪'Film' 'Song' 'Composer(s)' 'Writer(s)' 'Co-artist(s)'
+     films_1948⍪←'Afsana' '"Dulha Babu Tu Jhule Mein Jhul"' 'N/A' 'N/A' 'S. Balbir'
+     films_1948⍪←'Char Din Ki Chandni' '"Char Sau Bees Hasinon Se"' 'N/A' 'N/A' 'solo'
+     films_1948⍪←'"Taqdeer Ne Loota"' 'Shankar Dasgupta' '    ' '    ' '    '
+     films_1948⍪←'Chunaria' '"Tere Milne Ko Jee Dhadke"' 'Hansraj Behl' 'Mulk Raj Bhakri' 'Geeta Dutt, Zohrabai Ambalewali'
+     films_1948≡2⊃r
+ }
