@@ -83,3 +83,30 @@ Tried again with the full page input (`1227754=≢full`).
 The way we locate open, close and self-close tags is by partitioning the input and locating certain features within each partition.
 
 For example, `sc←(o⊂o)∨<\¨o⊂'/>'⍷⍵` is a less-than scan over partitions. We will investigate using flat array techniques for equivalent computations.
+
+```
+      ≢t
+32879
+      ]runtime -c "##.CloseUnclosedTags t" "##.CloseUnclosedTags2 t"
+                                                                                   
+  ##.CloseUnclosedTags t  → 1.3E¯3 |   0% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+  ##.CloseUnclosedTags2 t → 9.3E¯4 | -29% ⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕⎕ 
+```
+
+```
+ CloseUnclosedTags2←{
+     o←('<'=⍵)>'/'=1⌽⍵     ⍝ open tags are < not followed by /
+     c←('<'=⍵)∧1⌽('/'=⍵)   ⍝ closed tags marked by </
+     First←(∧∨⊢{⍵\2</0,⍵/⍺}∨)
+     Any←{2<⌿0⍪(1⌽⍺)⌿+⍀⍵}
+     t←¯1(⊢∧⌽)≠\o∨o First ⍵∊' >'                        ⍝ open tag type=1
+     t>←i∊(i←+\'<'=⍵)/⍨(s∧¯1⌽'<'=⍵)∨(1⌽'>'=⍵)∧s←'/'=⍵   ⍝ ignore self-closing tags
+     t+←2×¯1(⊢∧⌽)⍣2≠\c∨(∨\c)∧c First ⍵∊' >'             ⍝ close tag type=2
+     ot←(t=1)⊆⍵                     ⍝ open tags
+     ct←(t=2)⊆⍵                     ⍝ close tags
+     PDE←{⍺(R⍨∊R←≢⍤⊢⍴∘⍋∘⍋⍺⍳⍪⍨)⍵}    ⍝ APLCart: Progressive membership without replacement
+     ut←~ot PDE ct                  ⍝ each occurance of a close tag consumes an occurance of the corresponding open tag. Unclosed tags are the remaining open tags.
+     otm←¯1(⊢∧⌽)≠\o∨o First ⍵='>'   ⍝ mark entire open tag
+     '/'@((¯1+⍳+/x)+⍸x)⊢⍵⌿⍨1+x←2>/0,otm∧(+\2</0,t=1)∊⍸ut   ⍝ close unclosed tags
+ }
+```
