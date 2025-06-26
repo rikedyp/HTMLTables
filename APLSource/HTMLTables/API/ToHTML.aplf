@@ -1,6 +1,7 @@
  ToHTML←{
 ⍝ ⍵: APL matrix
 ⍝ ←: HTML table simple character vector
+     2≠≢⍴⍵:⎕SIGNAL⊂('EN' 4)('EM'(⎕EM 4))('Message' 'Input must be a matrix')
      (r c)←⍴⍵
      d←0,(r×1+c)⍴1,c⍴2
      con←(,⍵)@{2=d}''⍨¨d

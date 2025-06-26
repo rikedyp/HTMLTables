@@ -1,0 +1,4 @@
+ Test_ToHTML_Fail_Rank_01←{
+     4::1
+     r←##.##.HTMLTables.API.ToHTML ⍬
+ }
