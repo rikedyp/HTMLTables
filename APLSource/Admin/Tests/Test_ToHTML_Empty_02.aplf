@@ -1,0 +1,4 @@
+ Test_ToHTML_Empty_02←{
+     r←##.##.HTMLTables.API.ToHTML 0 1⍴0
+     r≡'<table></table>'
+ }

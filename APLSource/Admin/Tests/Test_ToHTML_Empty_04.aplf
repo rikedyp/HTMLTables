@@ -1,0 +1,8 @@
+ Test_ToHTML_Empty_04←{
+     nl←⎕UCS 13
+     t←'<table>',nl
+     t,←'  <tr></tr>',nl
+     t,←'</table>'
+     r←##.##.HTMLTables.API.ToHTML 1 0⍴0
+     r≡t
+ }
