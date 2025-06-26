@@ -1,0 +1,19 @@
+ Test_ToHTML_02←{
+     nl←⎕UCS 13
+     t←'<table>',nl
+     t,←'  <tr>',nl
+     t,←'    <td>Name</td>',nl
+     t,←'    <td>Type</td>',nl
+     t,←'  </tr>',nl
+     t,←'  <tr>',nl
+     t,←'    <td>Whiskers</td>',nl
+     t,←'    <td>Cat</td>',nl
+     t,←'  </tr>',nl
+     t,←'  <tr>',nl
+     t,←'    <td>Fido</td>',nl
+     t,←'    <td>Dog</td>',nl
+     t,←'  </tr>',nl
+     t,←'</table>'
+     r←##.##.HTMLTables.API.ToHTML 3 2⍴'Name' 'Type' 'Whiskers' 'Cat' 'Fido' 'Dog'
+     r≡t
+ }

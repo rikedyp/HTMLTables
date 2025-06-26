@@ -1,0 +1,17 @@
+ Test_ToHTML_01←{
+     nl←⎕UCS 13
+     t←'<table>',nl
+     t,←'  <tr>',nl
+     t,←'    <td>1</td>',nl
+     t,←'    <td>2</td>',nl
+     t,←'    <td>3</td>',nl
+     t,←'  </tr>',nl
+     t,←'  <tr>',nl
+     t,←'    <td>4</td>',nl
+     t,←'    <td>5</td>',nl
+     t,←'    <td>6</td>',nl
+     t,←'  </tr>',nl
+     t,←'</table>'
+     r←##.##.HTMLTables.API.ToHTML 2 3⍴⍳6
+     r≡t
+ }

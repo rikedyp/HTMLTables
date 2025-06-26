@@ -1,0 +1,9 @@
+ ToHTML←{
+⍝ ⍵: APL matrix
+⍝ ←: HTML table simple character vector
+     (r c)←⍴⍵
+     d←0,(r×1+c)⍴1,c⍴2
+     con←(,⍵)@{2=d}''⍨¨d
+     t←'table'⊂⍛,(r×1+c)⍴'tr'⊂⍛,c⍴⊂'td'
+     ⎕XML d,t,⍪con
+ }
