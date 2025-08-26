@@ -2,7 +2,7 @@
 ⍝ Make a new release of ParquetDotNet
  home←##.CiderConfig.HOME
  cider←##.CiderConfig.CIDER
- name←(⎕SE.Tatin.ReadPackageConfigFile home).name
+ name←(⎕SE.Tatin.GetPackageConfigFileAsNS home).name
 
 ⍝ Copy version from package config
  API←##.HTMLTables.API

@@ -1,1 +1,2 @@
 dyalog-HttpCommand-5.8.0
+bpbecker-XMLUtils-1.1.1
