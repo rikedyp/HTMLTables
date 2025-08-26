@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tatin</title>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="hQnvuUP3Zv41CTiu1MJPmMy48AcWFu3sXc3ptsGhYlk" />
+<link rel="stylesheet" type="text/css" href="/Assets/CSS/screen.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/Assets/CSS/print.css" media="print">
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/r-2.3.0/datatables.min.css">
+<script src="https://cdn.datatables.net/v/dt/jq-3.6.0/dt-1.12.1/r-2.3.0/datatables.min.js"></script>
+<link rel="icon" type="image/x-icon" href="/Assets/img/favicon.ico">
+<style>
+</style>
+<link rel="stylesheet" type="text/css" href="chrome-extension://hldllnfgjbablcfcdcjldbbfopmohnda/content_scripts.css">
+<style>
+@font-face{
+font-family: 'Circular';
+font-weight: 400;
+src: url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.eot);
+src: url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.eot?#iefix) format('embedded-opentype'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.woff2) format('woff2'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.woff) format('woff'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.ttf) format('truetype'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Regular.svg) format('svg');
+}
+@font-face{
+font-family: 'Circular'; 
+font-weight: 700;
+src: url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.eot);
+src: url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.eot?#iefix) format('embedded-opentype'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.woff2) format('woff2'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.woff) format('woff'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.ttf) format('truetype'),
+url(chrome-extension://mfidniedemcgceagapgdekdbmanojomk/font/Circular-Pro-Black-Bold.svg) format('svg');
+}
+</style>
+<script src="chrome-extension://mooikfkahbdckldjjndioackbalphokd/assets/prompt.js"></script>
+ <script type="text/javascript">
+    $(document).ready(function () {
+        $('table').DataTable({
+            "dom":"ft",
+            "paging":false,
+            "ordering": false,
+            "language": {
+                "search": ' ',
+                "searchPlaceholder": "Filter..."
+            }
+        });
+        $('.dataTables_filter').css("float","left");
+        $("input:visible").first().focus();
+    });
+ </script>
+<link rel="stylesheet" type="text/css" href="/Assets/CSS/screen-tweaks.css" media="screen">
+<link rel="stylesheet" type="text/css" href="/Assets/CSS/print-tweaks.css" media="print">
+</head>
+<body>
+<a style="display:none" href="/secret/credentials.txt" \>
+<div id="my-logo">
+<a href="/"><img id="logo" src="/Assets/img/tatin.png" title="Link to Tatin main page" alt="Link to Tatin main page"></a>
+<h1>Tatin Registry</h1>
+</div>
+<h2>List of packages</h2>
+<table class="stripe cell-border" style="margin: 0 0 0 0; max-width: 319em;">
+<thead>
+<tr class="my-first-th">
+<th style="align: left">Package name</th>
+<th style="align: left">Description</th>
+<th title="Number of major versions" style="align: left">Major<br>Versions</th>
+<th style="align: left">Project URL</th>
+<th title="Operating System" style="align: left">OS</th>
+<th title="User Command" style="align: left">UC</th>
+<th style="align: left">Tags</th>
+</thead>
+<tbody>
+<tr>
+<td><code><a href="/v1/packages/major_versions/abrudz-sort" title="List major versions">abrudz-sort</a></code></td>
+<td>Allow sorting according to various rules</td>
+<td align="right">1</td>
+<td><a href="https://github.com/abrudz/sort" title="Opens https://github.com/abrudz/sort in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>sorting,natural-sort,language</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-ADOC" title="List major versions">aplteam-ADOC</a></code></td>
+<td>Automated generation of documentation</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/ADOC" title="Opens https://github.com/aplteam/ADOC in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>documentation</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-APLGit2" title="List major versions">aplteam-APLGit2</a></code></td>
+<td>Git interface from Dyalog APL via Git Bash</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/APLGit" title="Opens https://github.com/aplteam/APLGit in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>apl-git-interface</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-APLGUI" title="List major versions">aplteam-APLGUI</a></code></td>
+<td>Collection of GUI utilities</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/APLGUI" title="Opens https://github.com/aplteam/APLGUI in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>gui-tools,gui</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-APLProcess" title="List major versions">aplteam-APLProcess</a></code></td>
+<td>Start an APL process from within Dyalog APL</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/APLProcess" title="Opens https://github.com/aplteam/APLProcess in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>process</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-APLTreeUtils2" title="List major versions">aplteam-APLTreeUtils2</a></code></td>
+<td>General utilities required by most members of the APLTree library</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/APLTreeUtils2" title="Opens https://github.com/aplteam/APLTreeUtils2 in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>tools,utilities</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Cider" title="List major versions">aplteam-Cider</a></code></td>
+<td>A project manager for Dyalog APL that cooperates with Tatin</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/Cider" title="Opens https://github.com/aplteam/Cider in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>project-management</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CodeBrowser" title="List major versions">aplteam-CodeBrowser</a></code></td>
+<td>Tool useful for code reviews</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/CodeBrowser" title="Opens https://github.com/aplteam/CodeBrowser in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>code-browsing,code-reviews</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CodeCoverage" title="List major versions">aplteam-CodeCoverage</a></code></td>
+<td>Monitors which parts of an application got actually executed</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/CodeCoverage" title="Opens https://github.com/aplteam/CodeCoverage in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>code-coverage,test-framework,unit-tests</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CommTools" title="List major versions">aplteam-CommTools</a></code></td>
+<td>Communication tools for interactions in the session: YesOrNo and Select</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/CommTools" title="Opens https://github.com/aplteam/CommTools in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>communication-tools,yes-or-no,select-tool</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Compare" title="List major versions">aplteam-Compare</a></code></td>
+<td>Allows comparing and merging objects in the workspace with a file or a file with another file</td>
+<td align="right">4</td>
+<td><a href="https://github.com/aplteam/Compare" title="Opens https://github.com/aplteam/Compare in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>comparison-tool,merge-tool</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CompareFiles" title="List major versions">aplteam-CompareFiles</a></code></td>
+<td>Cover for comparison utilities</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/CompareFiles" title="Opens https://github.com/aplteam/CompareFiles in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>file-comparison,comparison-utilities</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CompareGUI" title="List major versions">aplteam-CompareGUI</a></code></td>
+<td>GUI for the Compare class</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/CompareGUI" title="Opens https://github.com/aplteam/CompareGUI in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td>Yes</td>
+<td>comparison-tool</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-CompareSimple" title="List major versions">aplteam-CompareSimple</a></code></td>
+<td>Allows comparing objects in the workspace with a file or a file with another file</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/CompareSimple" title="Opens https://github.com/aplteam/CompareSimple in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>comparison-tool</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-DateAndTime" title="List major versions">aplteam-DateAndTime</a></code></td>
+<td>Utilities related to Date and Time, including doing math</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/DateAndTime" title="Opens https://github.com/aplteam/DateAndTime in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>date,time</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-DotNetZip" title="List major versions">aplteam-DotNetZip</a></code></td>
+<td>Zipping and unzipping with.NET Core on all major platforms</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/DotNetZip" title="Opens https://github.com/aplteam/DotNetZip in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>zip-tools</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-EventCodes" title="List major versions">aplteam-EventCodes</a></code></td>
+<td>Constants with meaningful names for Dyalog error codes</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/EventCodes" title="Opens https://github.com/aplteam/EventCodes in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>event-constants</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Execute" title="List major versions">aplteam-Execute</a></code></td>
+<td>Start a process from within APL</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/Execute" title="Opens https://github.com/aplteam/Execute in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>process,run-applications</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-FilesAndDirs" title="List major versions">aplteam-FilesAndDirs</a></code></td>
+<td>Utilities for doing gymnastics with files and directories</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/FilesAndDirs" title="Opens https://github.com/aplteam/FilesAndDirs in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>files,directories,copy,move,read,write,get,put</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-GitHub" title="List major versions">aplteam-GitHub</a></code></td>
+<td>Interface between GitHub and the GitHubAPIv3 package</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/GitHub" title="Opens https://github.com/aplteam/GitHub in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>apl-github-interface</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-GitHubAPIv3" title="List major versions">aplteam-GitHubAPIv3</a></code></td>
+<td>Utilities for dealing with GitHub repositories</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/GitHubAPIv3" title="Opens https://github.com/aplteam/GitHubAPIv3 in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>github-utilities</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-HandleError" title="List major versions">aplteam-HandleError</a></code></td>
+<td>Allows to catch errors on an application level; saves information useful to analyze the error</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/HandleError" title="Opens https://github.com/aplteam/HandleError in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>error-trapping</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-HashPasswords" title="List major versions">aplteam-HashPasswords</a></code></td>
+<td>Salting and hashing passwords</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/HashPassword" title="Opens https://github.com/aplteam/HashPassword in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>salting,hashing,password,cryptography</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-IniFiles" title="List major versions">aplteam-IniFiles</a></code></td>
+<td>Allows instantiating good old INI files in APL; comes with extended syntax supporting APL-like data structures</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/IniFiles" title="Opens https://github.com/aplteam/IniFiles in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>ini-files,config-files</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Inno" title="List major versions">aplteam-Inno</a></code></td>
+<td>Run the Inno Setup compiler on a particular script in order to create a setup.exe</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/Inno" title="Opens https://github.com/aplteam/Inno in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>inno,setup,installer</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Laguntza" title="List major versions">aplteam-Laguntza</a></code></td>
+<td>Managing and displaying help pages based on markdown files</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/Laguntza" title="Opens https://github.com/aplteam/Laguntza in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>help,markdown</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Latest" title="List major versions">aplteam-Latest</a></code></td>
+<td>Lists APL objects by change date/time</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/Latest" title="Opens https://github.com/aplteam/Latest in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>list-apl-objects</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-ListObjects" title="List major versions">aplteam-ListObjects</a></code></td>
+<td>Lists all APL objects</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/ListObjects" title="Opens https://github.com/aplteam/ListObjects in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>list-objects</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Logger" title="List major versions">aplteam-Logger</a></code></td>
+<td>Allows writing to LOG files; (almost) guaranteed to never break the application</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/Logger" title="Opens https://github.com/aplteam/Logger in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>log-files,logging</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-MakeHelpers" title="List major versions">aplteam-MakeHelpers</a></code></td>
+<td>Collections of helpers for building an application</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/MakeHelpers" title="Opens https://github.com/aplteam/MakeHelpers in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>build,make</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-MarkAPL" title="List major versions">aplteam-MarkAPL</a></code></td>
+<td>Converts Markdown to HTML5</td>
+<td align="right">4</td>
+<td><a href="https://github.com/aplteam/MarkAPL" title="Opens https://github.com/aplteam/MarkAPL in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>markdown,converter</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-OS" title="List major versions">aplteam-OS</a></code></td>
+<td>OS-related tools for all major platforms</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/OS" title="Opens https://github.com/aplteam/OS in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>os-tools</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-PresentAPL" title="List major versions">aplteam-PresentAPL</a></code></td>
+<td>Create a presentation from Markdown</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/PresentAPL" title="Opens https://github.com/aplteam/PresentAPL in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>presentation</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-ServiceState" title="List major versions">aplteam-ServiceState</a></code></td>
+<td>Interface between the Windows SCM (Service Control Manager) and applications running as a service</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/ServiceState" title="Opens https://github.com/aplteam/ServiceState in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>windows-services,scm</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-SevenZip" title="List major versions">aplteam-SevenZip</a></code></td>
+<td>Zip files with the Open Source tool 7Zip</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/SevenZip" title="Opens https://github.com/aplteam/SevenZip in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>zip-tools</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-ShowChmHelp" title="List major versions">aplteam-ShowChmHelp</a></code></td>
+<td>Display CHM files under program control (Windows only)</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/ShowChmHelp" title="Opens https://github.com/aplteam/ShowChmHelp in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>help,chm</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-SMTP" title="List major versions">aplteam-SMTP</a></code></td>
+<td>SMTP client for sending emails from within Dyalog APL</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/SMTP" title="Opens https://github.com/aplteam/SMTP in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>smtp,email</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Snippets" title="List major versions">aplteam-Snippets</a></code></td>
+<td>Manage APL-code snippets</td>
+<td align="right">1</td>
+<td><a href="https://github.com/aplteam/Snippets" title="Opens https://github.com/aplteam/Snippets in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td>Yes</td>
+<td>code-snippets</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-Tester2" title="List major versions">aplteam-Tester2</a></code></td>
+<td>Dyalog APL test framework</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/Tester2" title="Opens https://github.com/aplteam/Tester2 in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>test,test-framework</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-WindowsEventLog" title="List major versions">aplteam-WindowsEventLog</a></code></td>
+<td>Tools to read from and write to the Windows Event Log</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/WindowsEventLog" title="Opens https://github.com/aplteam/WindowsEventLog in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>windows-event-log</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-WinReg" title="List major versions">aplteam-WinReg</a></code></td>
+<td>Tools for dealing with the Windows Registry</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/WinReg" title="Opens https://github.com/aplteam/WinReg in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>windows-registry,registry</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-WinRegSimple" title="List major versions">aplteam-WinRegSimple</a></code></td>
+<td>Limited set of tools for dealing with the Windows Registry</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/WinRegSimple" title="Opens https://github.com/aplteam/WinRegSimple in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>windows-registry</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-WinSCP_NET" title="List major versions">aplteam-WinSCP_NET</a></code></td>
+<td>Interface between Dyalog and the WINSCP .NET DLL</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/WinSCP_NET" title="Opens https://github.com/aplteam/WinSCP_NET in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Win</td>
+<td></td>
+<td>winscp-interface</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-WinSys" title="List major versions">aplteam-WinSys</a></code></td>
+<td>Windows-only OS calls and system infos</td>
+<td align="right">2</td>
+<td><a href="https://github.com/aplteam/WinSys" title="Opens https://github.com/aplteam/WinSys in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>os-tools</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/aplteam-ZipArchive" title="List major versions">aplteam-ZipArchive</a></code></td>
+<td>Zipping and unzipping with .NET on Windows and zip/unzip on other platforms</td>
+<td align="right">3</td>
+<td><a href="https://github.com/aplteam/ZipArchive" title="Opens https://github.com/aplteam/ZipArchive in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>zip-tools</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/bkaw-APLPage" title="List major versions">bkaw-APLPage</a></code></td>
+<td>Generic APLPage (.aplp) templating library for Dyalog APL. Intended for use with HTML page templating.</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Bombardier-C-Kram/APLPage" title="Opens https://github.com/Bombardier-C-Kram/APLPage in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>aplpage,template,html,aplp,website</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/bkaw-DotEnvAPL" title="List major versions">bkaw-DotEnvAPL</a></code></td>
+<td>A DotEnv API for Dyalog APL</td>
+<td align="right">1</td>
+<td><a href="https://git.bkaw.ca/bkaw/dotenvapl" title="Opens https://git.bkaw.ca/bkaw/dotenvapl in a new tab" target="_blank" rel=noopener>git.bkaw.ca</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/bkaw-JWTAPL" title="List major versions">bkaw-JWTAPL</a></code></td>
+<td>Encode and Decode JWT Tokens in Dyalog APL</td>
+<td align="right">2</td>
+<td><a href="https://github.com/Bombardier-C-Kram/JWTAPL" title="Opens https://github.com/Bombardier-C-Kram/JWTAPL in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>jwt,json,web,token</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/bpbecker-XMLUtils" title="List major versions">bpbecker-XMLUtils</a></code></td>
+<td>Utility library to convert HTML to XHTML and manipulate matrix format ⎕XML data</td>
+<td align="right">1</td>
+<td><a href="https://github.com/bpbecker/XMLUtils" title="Opens https://github.com/bpbecker/XMLUtils in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>html,xml,xhtml,pi</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/BrianED-raylibAPL" title="List major versions">BrianED-raylibAPL</a></code></td>
+<td>raylibAPL is a library made to write cross-platform graphical applications using the Dyalog APL programming language</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Brian-ED/raylibAPL" title="Opens https://github.com/Brian-ED/raylibAPL in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>graphics,sound,audio,application-development,game-development,io,2D,3D,shaders,gui,c-binding</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/davin-DateTime" title="List major versions">davin-DateTime</a></code></td>
+<td>Easy calculations with dates</td>
+<td align="right">1</td>
+<td><a href="https://github.com/DavinChurch/DateTime/blob/master/README.md" title="Opens https://github.com/DavinChurch/DateTime/blob/master/README.md in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>dates,times,calculations,formatting,dt</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/davin-FilePlus" title="List major versions">davin-FilePlus</a></code></td>
+<td>Extend component files to use anything for a component number</td>
+<td align="right">1</td>
+<td><a href="https://github.com/DavinChurch/FilePlus" title="Opens https://github.com/DavinChurch/FilePlus in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>files,names,components,named-components,extension,dynamic</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/davin-SQLFns" title="List major versions">davin-SQLFns</a></code></td>
+<td>Easily create text SQL commands for use with any SQL program interface</td>
+<td align="right">1</td>
+<td><a href="https://github.com/DavinChurch/SQLFns/blob/master/README.md" title="Opens https://github.com/DavinChurch/SQLFns/blob/master/README.md in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>sql,command-generation,text-creation</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/davin-Tester" title="List major versions">davin-Tester</a></code></td>
+<td>Simplified function-level testing of programs</td>
+<td align="right">1</td>
+<td><a href="https://github.com/DavinChurch/Tester/blob/main/README.md" title="Opens https://github.com/DavinChurch/Tester/blob/main/README.md in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>function,application,testing,tester,validation</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/dyalog-APLProcess" title="List major versions">dyalog-APLProcess</a></code></td>
+<td>Utility to start APL processes</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Dyalog/APLProcess" title="Opens https://github.com/Dyalog/APLProcess in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>pi</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/dyalog-HttpCommand" title="List major versions">dyalog-HttpCommand</a></code></td>
+<td>Utility to execute HTTP requests</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Dyalog/HttpCommand" title="Opens https://github.com/Dyalog/HttpCommand in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>http,pi</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/dyalog-Jarvis" title="List major versions">dyalog-Jarvis</a></code></td>
+<td>JSON and REST Web Service Framework</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Dyalog/Jarvis" title="Opens https://github.com/Dyalog/Jarvis in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>http,webservice,json,rest</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/dyalog-NuGet" title="List major versions">dyalog-NuGet</a></code></td>
+<td>Use NuGet packages from Dyalog APL</td>
+<td align="right">1</td>
+<td><a href="https://github.com/dyalog/nuget" title="Opens https://github.com/dyalog/nuget in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>dotnet,nuget,packages</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/dyalog-OpenAI" title="List major versions">dyalog-OpenAI</a></code></td>
+<td>Utilities to interface with the OpenAI API</td>
+<td align="right">1</td>
+<td><a href="https://github.com/Dyalog/OpenAI" title="Opens https://github.com/Dyalog/OpenAI in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>pi,llm,openai</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/rikedyp-HTMLTables" title="List major versions">rikedyp-HTMLTables</a></code></td>
+<td>Import tables from HTML as APL nested matrices</td>
+<td align="right">1</td>
+<td><a href="https://github.com/rikedyp/HTMLTables" title="Opens https://github.com/rikedyp/HTMLTables in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>table, grid, data, import, read, web, page, site, scrape</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/rikedyp-TinyTest" title="List major versions">rikedyp-TinyTest</a></code></td>
+<td>A small unit testing framework for Dyalog APL </td>
+<td align="right">1</td>
+<td><a href="https://github.com/RikedyP/TinyTest" title="Opens https://github.com/RikedyP/TinyTest in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>test,testing,unit,simple</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/sjt-text" title="List major versions">sjt-text</a></code></td>
+<td>Interpolated string resembling Python’s </td>
+<td align="right">1</td>
+<td><a href="https://github.com/5jt/Text" title="Opens https://github.com/5jt/Text in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>interpolate,string,text</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/sjt-tinytest" title="List major versions">sjt-tinytest</a></code></td>
+<td>Minimal testing tools and an example of a test script</td>
+<td align="right">1</td>
+<td><a href="https://github.com/5jt/TinyTest" title="Opens https://github.com/5jt/TinyTest in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>operator,test</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/sjt-translate" title="List major versions">sjt-translate</a></code></td>
+<td>Multilingual text support</td>
+<td align="right">1</td>
+<td><a href="https://github.com/5jt/Translate" title="Opens https://github.com/5jt/Translate in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>text,multilingual</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/tiamatica-Mutsu" title="List major versions">tiamatica-Mutsu</a></code></td>
+<td>Flexible test framework</td>
+<td align="right">1</td>
+<td><a href="https://github.com/tiamatica/mutsu" title="Opens https://github.com/tiamatica/mutsu in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>test, testing, test-framework</td>
+</tr>
+<tr>
+<td><code><a href="/v1/packages/major_versions/tiamatica-Notela" title="List major versions">tiamatica-Notela</a></code></td>
+<td>OTEL Telemetry framework for APL</td>
+<td align="right">1</td>
+<td><a href="https://github.com/tiamatica/Notela" title="Opens https://github.com/tiamatica/Notela in a new tab" target="_blank" rel=noopener>github.com</a></td>
+<td>Lin, Mac, Win</td>
+<td></td>
+<td>telemetry,otel</td>
+</tr>
+</tr>
+</tbody>
+</table>
+<div id="my-footer">
+<hr>
+<p>Created by Tatin version 0.121.1+2104 from 2025-08-09 under  Linux-64  18.2.45645.0  S  Runtime 	&#8212; Bugs, questions, problems:<a class="mailto_link" href="mailto:info@tatin.dev?subject=Regarding%20https://tatin.dev">info@tatin.dev</a></p>
+</div>
+</body>
+</html>
+

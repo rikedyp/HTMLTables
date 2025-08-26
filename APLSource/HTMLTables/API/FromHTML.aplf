@@ -1,12 +1,10 @@
  FromHTML←{
 ⍝ ⍵: Simple character vector or nested vector of character vectors
 ⍝ ←: List of APL nested matrices with text extracted from <table> tags in ⍵
-     ExtractTables←'<table>'∘##.HTX
-     tables←ExtractTables ⍵
-     0=≢tables:''
-     ⍺←⍳≢tables
-     (error xml)←↓⍉↑{0::(⎕EN ⎕DMX.Message) ⋄ (0,⊂⎕XML ⍵)}¨tables[⍺]
-     e←0<error
-     _←{∨/e:⎕←'There were errors processing tables: ',∊(⎕UCS 13),⍕(⍸e),':',↑e/xml ⋄ ''}⍬
-     ##.XMLTable2Array¨xml/⍨~e
+     XU←##.XMLUtils
+     0::⎕SIGNAL⊂('EN' 11)('Message' 'Unable to convert HTML to XHTML')
+     xml←XU.HTMLtoXHTML ⍵
+     tables←xml XU.Xselect xml XU.Xfind'//table'
+     0∊⍴tables:''⊣⎕←'No valid HTML tables found'
+     ##.XMLTable2Array¨tables
  }

@@ -4,11 +4,8 @@
 ⍝    one row for each outermost <tr>
      (d e c a t)←↓⍉⍵           ⍝ depth, element, content, attributes, type
      i←⍳≢⍵                     ⍝ indices
-     trd←d/⍨<\e∊⊂'tr'          ⍝ depth of highest level <tr> elements
-⍝     thd←d/⍨<\e∊⊂'th'          ⍝         " "            <th>   " "
 ⍝ TODO: use depth to make extraction more robust (e.g. table within table)
-     shape←+/(d=trd)∧e∊⊂'tr'   ⍝ shape is (tr td)
-     tr←(d=trd)∧e∊⊂'tr'        ⍝ mask of <tr> elements
+     tr←e∊⊂'tr'                ⍝ mask of <tr> elements
      td←e∊⊆'td' 'th'           ⍝ mask of <td> or <th> elements
      PartitionedSum←{              ⍝ aplcart fast partitioned sum; Fast {+/¨⍺⊂⍵}
          sums←+⍀⍵                  ⍝ cumulative sum
@@ -16,7 +13,7 @@
          ¯2-⌿ends⌿sums             ⍝ subtract from next partition to get the sum of this partition
      }
      rec←tr PartitionedSum td   ⍝ Row Element Count: count of <td> and <th> within each <tr>
-     col←⌈/rec ⋄ shape,←col
+     col←⌈/rec ⋄ shape←(+/tr)(col)
      val←c⊂⍤⌿⍤1⍨(0<≢¨c)(∧⍤1)(¯1∘↑⍪⍨2≠⌿⊢)i∘.≤⍨⍸e∊⊆'td' 'th'   ⍝ Compress out content for each element
      ex0←((1,⍨⍪)⊢⍤/⍥,⍪,~)rec≠col   ⍝ aplcart expansion vector
      dif←col-⍨rec/⍨rec≠col         ⍝ difference is negation of number of extra elements to pad val

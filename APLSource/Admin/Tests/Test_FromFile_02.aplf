@@ -1,0 +1,8 @@
+ Test_FromFile_02←{
+     file←##.##.CiderConfig.HOME,'/test_files/invalid_xml_01.html'
+     table←##.##.HTMLTables.API.FromFile file
+     1≠≢table:0
+     67 7≢⍴⊃table:0
+     (1⌷⊃table)≢'Package name' 'Description' 'MajorVersions' 'Project URL' 'OS' 'UC' 'Tags':0
+     1
+ }
