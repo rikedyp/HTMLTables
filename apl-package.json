@@ -20,5 +20,5 @@
   source: "APLSource/HTMLTables",
   tags: "table, grid, data, import, read, web, page, site, scrape",
   userCommandScript: "",
-  version: "0.2.0+2",
+  version: "0.3.0",
 }
