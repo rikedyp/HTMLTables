@@ -1,7 +1,7 @@
 {
   packageID: [
-    "dyalog-HttpCommand-5.8.0",
-    "bpbecker-XMLUtils-1.1.1",
+    "dyalog-HttpCommand-5.9.3",
+    "bpbecker-XMLUtils-1.1.2",
   ],
   principal: [
     1,
